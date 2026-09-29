@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { json } from 'node:stream/consumers';
 import { types } from 'node:util';
 import { Pokemon } from '@/utils/types';
+import PokemonList from '@/components/PokemonList';
 
 async function getData() {
   const url = 'https://pokeapi.co/api/v2/pokemon?limit=20&offset=0';
@@ -48,16 +49,7 @@ export default async function HomePage() {
       <h1>hello world</h1>
       <input type="text" placeholder="search for pokemon" />
 
-      {pokemonData.map((pokemon: Pokemon, idx) => {
-        return (
-          <div key={`${idx}-${pokemon.name}`}>
-            <Image src={pokemon.imageUrl} alt={pokemon.name}  width={250} height={250}/>
-            <h2>{pokemon.name}</h2>
-            <p>{pokemon.id}</p>
-            <p>{pokemon.types.join(', ')}</p>
-          </div>
-        );
-      })}
+      <PokemonList pokemons={pokemonData} />
       <div>card component</div>
     </>
   );
