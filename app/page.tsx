@@ -51,7 +51,7 @@ export default async function HomePage() {
       {pokemonData.map((pokemon: Pokemon, idx) => {
         return (
           <div key={`${idx}-${pokemon.name}`}>
-            <img src={pokemon.imageUrl} alt={pokemon.name} />
+            <Image src={pokemon.imageUrl} alt={pokemon.name}  width={250} height={250}/>
             <h2>{pokemon.name}</h2>
             <p>{pokemon.id}</p>
             <p>{pokemon.types.join(', ')}</p>

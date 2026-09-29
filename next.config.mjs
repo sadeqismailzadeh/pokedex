@@ -9,4 +9,15 @@ export default withBundleAnalyzer({
   experimental: {
     optimizePackageImports: ['@mantine/core', '@mantine/hooks'],
   },
+
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'raw.githubusercontent.com',
+        port: '',
+        pathname: '/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/**',
+      },
+    ],
+  },
 });
