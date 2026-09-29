@@ -1,8 +1,9 @@
 import Image from 'next/image';
 import { json } from 'node:stream/consumers';
 import { types } from 'node:util';
-import { Pokemon } from '@/utils/types';
+import { Box, Group, Stack, TextInput, Title } from '@mantine/core';
 import PokemonList from '@/components/PokemonList';
+import { Pokemon } from '@/utils/types';
 
 async function getData() {
   const url = 'https://pokeapi.co/api/v2/pokemon?limit=20&offset=0';
@@ -46,11 +47,15 @@ export default async function HomePage() {
 
   return (
     <>
-      <h1>hello world</h1>
-      <input type="text" placeholder="search for pokemon" />
+      <Box bg="red.6" p="xl">
+        <Stack align="center">
+          <Title> Pokedex </Title>
 
-      <PokemonList pokemons={pokemonData} />
-      <div>card component</div>
+          <TextInput w="100%" type="text" placeholder="search for pokemon" />
+        </Stack>
+
+        <PokemonList pokemons={pokemonData} />
+      </Box>
     </>
   );
 }

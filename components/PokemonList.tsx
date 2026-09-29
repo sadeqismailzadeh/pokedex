@@ -11,7 +11,7 @@ export default function PokemonList({ pokemons }: { pokemons: Pokemon[] }) {
         return <PokemonCard key={`${idx}-${pokemon.name}`} {...pokemon} />;
       })} */}
 
-      <SimpleGrid p="xl"
+      <SimpleGrid py="xl"
         cols={{ base: 1, sm: 2, lg: 3 }}
         spacing={{ base: 10, sm: 'xl' }}
         verticalSpacing={{ base: 'md', sm: 'xl' }}
