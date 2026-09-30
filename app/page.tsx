@@ -44,8 +44,6 @@ async function getData() {
 
 export default async function HomePage() {
   const pokemonData = await getData();
-  console.log({ pokemonData });
-
   return (
     <>
       <Box bg="red.6" p="xl">

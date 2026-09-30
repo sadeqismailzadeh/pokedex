@@ -38,7 +38,7 @@ export default function PokemonCard({ id, imageUrl, name, types }: Pokemon) {
       <Card shadow="sm" padding="lg" withBorder>
         <Stack align="center" gap={7}>
           <CardSection>
-            <NextImage src={imageUrl} alt={name} width={250} height={250} />
+            <NextImage src={imageUrl} alt={name} width={150} height={150} />
           </CardSection>
           <Text c="gray.6" size="sm">
             #{String(id).padStart(3, '0')}

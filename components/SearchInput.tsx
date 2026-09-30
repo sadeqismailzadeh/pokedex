@@ -28,7 +28,7 @@ export default function SearchInput({ onSearch }: Props) {
         setSearch(event.target.value)
         return;
       }}
-      w="70%"
+      w="50%"
       type="text"
       placeholder="search for pokemon"
       leftSection={<BsSearch />}
