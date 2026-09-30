@@ -13,8 +13,8 @@ export default function PokemonList({ pokemons }: { pokemons: Pokemon[] }) {
 
       <SimpleGrid py="xl"
         cols={{ base: 1, sm: 2, lg: 4 }}
-        spacing={{ base: 10, sm: 'xl' }}
-        verticalSpacing={{ base: 'md', sm: 'xl' }}
+        spacing={{ base: 'sm', sm: 'md', lg: 'md' }}
+        verticalSpacing={{ base: 'md', sm: 'md' }}
       >
         {pokemons.map((pokemon: Pokemon, idx) => {
         return <PokemonCard key={`${idx}-${pokemon.name}`} {...pokemon} />;

@@ -3,13 +3,13 @@ import { json } from 'node:stream/consumers';
 import { types } from 'node:util';
 import { Box, Group, Stack, TextInput, Title } from '@mantine/core';
 import PokemonList from '@/components/PokemonList';
+import PokemonWrapper from '@/components/PokemonWrapper';
 import SearchInput from '@/components/SearchInput';
 import { Pokemon } from '@/utils/types';
-import PokemonWrapper from '@/components/PokemonWrapper';
 async function getData() {
   const url = 'https://pokeapi.co/api/v2/pokemon?limit=20&offset=0';
   try {
-    const response = await fetch(url);
+    const response = await fetch(url, { cache: 'force-cache' });
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
     }
@@ -52,7 +52,7 @@ export default async function HomePage() {
             {' '}
             Pokedex{' '}
           </Title>
-          <PokemonWrapper pokemons={pokemonData}  />
+          <PokemonWrapper pokemons={pokemonData} />
         </Stack>
       </Box>
     </>
