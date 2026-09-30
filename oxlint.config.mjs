@@ -1,5 +1,5 @@
-import { defineConfig } from 'oxlint';
 import { oxlint } from 'oxc-config-mantine';
+import { defineConfig } from 'oxlint';
 
 export default defineConfig({
   ...oxlint,
@@ -8,5 +8,6 @@ export default defineConfig({
   rules: {
     ...oxlint.rules,
     'no-console': 'warn',
+    'no-useless-return': 'off',
   },
 });
