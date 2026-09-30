@@ -3,8 +3,9 @@ import { json } from 'node:stream/consumers';
 import { types } from 'node:util';
 import { Box, Group, Stack, TextInput, Title } from '@mantine/core';
 import PokemonList from '@/components/PokemonList';
+import SearchInput from '@/components/SearchInput';
 import { Pokemon } from '@/utils/types';
-
+import PokemonWrapper from '@/components/PokemonWrapper';
 async function getData() {
   const url = 'https://pokeapi.co/api/v2/pokemon?limit=20&offset=0';
   try {
@@ -49,12 +50,12 @@ export default async function HomePage() {
     <>
       <Box bg="red.6" p="xl">
         <Stack align="center">
-          <Title> Pokedex </Title>
-
-          <TextInput w="100%" type="text" placeholder="search for pokemon" />
+          <Title c="white" py="lg">
+            {' '}
+            Pokedex{' '}
+          </Title>
+          <PokemonWrapper pokemons={pokemonData}  />
         </Stack>
-
-        <PokemonList pokemons={pokemonData} />
       </Box>
     </>
   );
